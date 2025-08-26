@@ -4,7 +4,7 @@ A small, home friendly SIEM that collects, enriches, searches, and alerts on log
 
 ---
 
-## ✨ Features
+##  Features
 - Collect Windows, Linux, and network logs with lightweight agents
 - Enrich with GeoIP and ASN, create an attack map style visualization
 - Search and build dashboards in OpenSearch Dashboards
@@ -12,7 +12,7 @@ A small, home friendly SIEM that collects, enriches, searches, and alerts on log
 - Docker based setup, one command up and running
 - Local first, no cloud dependency
 
-## 🏗️ Architecture
+##  Architecture
 - **Agents**, choose what you need
   - Windows, Sysmon plus Winlogbeat
   - Linux, Filebeat or Fluent Bit, optional auditd rules
@@ -27,7 +27,7 @@ A small, home friendly SIEM that collects, enriches, searches, and alerts on log
 [Suricata/Zeek]    → Filebeat   →                                                    (Dashboards, Alerts)
 ```
 
-## 🔧 Tech stack
+##  Tech stack
 - OpenSearch and OpenSearch Dashboards
 - Beats, Winlogbeat, Filebeat
 - Optional, Logstash for advanced pipelines
@@ -36,7 +36,7 @@ A small, home friendly SIEM that collects, enriches, searches, and alerts on log
 
 ---
 
-## 🚀 Quick start
+##  Quick start
 ### 1) Prerequisites
 - Docker and Docker Compose installed
 - At least 4 GB RAM available
@@ -91,7 +91,7 @@ output.opensearch:
 
 ---
 
-## 📊 Dashboards
+##  Dashboards
 - **Overview**, system and security events with time presets
 - **Authentication**, failed logons, success rates, source IPs
 - **Processes**, parent child trees, unsigned binaries, LOLBins
@@ -104,7 +104,7 @@ output.opensearch:
 
 ---
 
-## 🔔 Alerts
+##  Alerts
 Start simple, then expand.
 - Multiple failed logons from one IP in a short window
 - Local admin group membership changes
@@ -115,7 +115,7 @@ Alert examples will live under `./detections` as YAML or NDJSON.
 
 ---
 
-## 🧪 Test data
+##  Test data
 You can generate safe test events locally.
 - Windows, use `runas` with a wrong password several times
 - Linux, attempt a few failed `ssh` logins from another host in your LAN
@@ -123,7 +123,7 @@ You can generate safe test events locally.
 
 ---
 
-## 📁 Repository layout
+##  Repository layout
 ```
 Home_SIEM/
 ├─ compose/               # Docker Compose files
@@ -137,12 +137,12 @@ Home_SIEM/
 
 ---
 
-## 🔐 Security notes
+##  Security notes
 This is a home project, use strong passwords, keep ports closed to the internet, and restrict access to your LAN. All data stays local by default.
 
 ---
 
-## 🧭 Roadmap
+##  Roadmap
 - Add prebuilt dashboards for Sysmon and Suricata
 - Add Sigma rule to OpenSearch converter script
 - Add Zeek integration examples
@@ -150,7 +150,7 @@ This is a home project, use strong passwords, keep ports closed to the internet,
 
 ---
 
-## 🙌 Credits
+##  Credits
 Inspired by community home lab SIEM projects that visualize live data and apply modern SIEM concepts. Thank you to creators who share ideas openly.
 
 ## License
