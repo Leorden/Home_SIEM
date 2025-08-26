@@ -1,0 +1,11 @@
+# Example detection, failed logons burst from a single source
+title: Multiple failed logons from one IP
+description: Detects repeated authentication failures from a single source within 5 minutes
+index: logs-*
+condition:
+  timeframe: 5m
+  threshold: 8
+  group_by: source.ip
+  filter:
+    event.category: authentication
+    event.outcome: failure

@@ -1,0 +1,18 @@
+{
+  "description": "Add GeoIP and ASN info to source.ip",
+  "processors": [
+    {
+      "geoip": {
+        "field": "source.ip",
+        "target_field": "source.geo"
+      }
+    },
+    {
+      "geoip": {
+        "database_file": "GeoLite2-ASN.mmdb",
+        "field": "source.ip",
+        "target_field": "source.asn"
+      }
+    }
+  ]
+}

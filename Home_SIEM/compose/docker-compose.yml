@@ -1,0 +1,28 @@
+services:
+  opensearch:
+    image: opensearchproject/opensearch:2
+    container_name: opensearch
+    environment:
+      - discovery.type=single-node
+      - OPENSEARCH_INITIAL_ADMIN_PASSWORD=${OPENSEARCH_PASSWORD:-changeme}
+    ports:
+      - "9200:9200"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    healthcheck:
+      test: ["CMD", "bash", "-c", "curl -s http://localhost:9200 >/dev/null"]
+      interval: 20s
+      timeout: 5s
+      retries: 10
+  dashboards:
+    image: opensearchproject/opensearch-dashboards:2
+    container_name: dashboards
+    depends_on:
+      - opensearch
+    environment:
+      - OPENSEARCH_HOSTS=["http://opensearch:9200"]
+    ports:
+      - "${DASHBOARDS_PORT:-5601}:5601"
+version: "3.8"

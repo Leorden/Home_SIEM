@@ -1,0 +1,11 @@
+filebeat.modules:
+  - module: system
+    syslog:
+      enabled: true
+    auth:
+      enabled: true
+
+output.opensearch:
+  hosts: ["${OPENSEARCH_PROTOCOL:-http}://${OPENSEARCH_HOST:-localhost}:${OPENSEARCH_PORT:-9200}"]
+  username: "${OPENSEARCH_USER:-admin}"
+  password: "${OPENSEARCH_PASSWORD:-changeme}"
